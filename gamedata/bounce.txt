@@ -1,0 +1,113 @@
+"Games"
+{
+	"tf"
+	{
+		"Signatures"
+		{
+			"CObjectSentrygun::FireRocket"
+			{
+				"library"	"server"
+				"linux" 	"@_ZN16CObjectSentrygun10FireRocketEv"
+				"windows"	"\x55\x8B\xEC\xA1\x2A\x2A\x2A\x2A\x81\xEC\xD0\x00\x00\x00"
+			}
+		}
+		"Offsets"
+		{
+			"CBaseEntity::VPhysicsCollision"
+			{
+				"linux"		"162"
+				"windows"	"161"
+			}
+			"CBaseEntity::ResolveFlyCollisionCustom"
+			{
+				"linux"		"169"
+				"windows"	"168"
+			}
+			"CTFGrenadePipebombProjectile::PipebombTouch"
+			{
+				"linux"		"254"
+				"windows"	"253"
+			}
+			"CTFGrenadePipebombProjectile::ExplodesOnHit"
+			{
+				"linux"		"258"
+				"windows"	"257"
+			}
+			"IPhysicsObject::SetVelocity"
+			{
+				"linux"		"50"
+				"windows"	"49"
+			}
+			"gamevcollisionevent_t::preVelocity"
+			{
+				"linux"		"32"
+				"windows"	"32"
+			}
+			"gamevcollisionevent_t::pEntities"
+			{
+				"linux"		"104"
+				"windows"	"104"
+			}
+		}
+		"Functions"
+		{
+			"CBaseEntity::VPhysicsCollision"
+			{
+				"offset"	"CBaseEntity::VPhysicsCollision"
+				"hooktype"	"entity"
+				"return"	"void"
+				"this"		"entity"
+				"arguments"
+				{
+					"index"
+					{
+						"type"	"int"
+					}
+					"pEvent"
+					{
+						"type"	"objectptr"
+					}
+				}
+			}
+			"CBaseEntity::ResolveFlyCollisionCustom"
+			{
+				"offset"	"CBaseEntity::ResolveFlyCollisionCustom"
+				"hooktype"	"entity"
+				"return"	"void"
+				"this"		"entity"
+				"arguments"
+				{
+					"trace"
+					{
+						"type"	"objectptr"
+					}
+					"vecVelocity"
+					{
+						"type"	"vectorptr"
+					}
+				}
+			}
+			"CTFGrenadePipebombProjectile::PipebombTouch"
+			{
+				"offset"	"CTFGrenadePipebombProjectile::PipebombTouch"
+				"hooktype"	"entity"
+				"return"	"void"
+				"this"		"entity"
+				"arguments"
+				{
+					"pOther"
+					{
+						"type"	"cbaseentity"
+					}
+				}
+			}
+			"CTFGrenadePipebombProjectile::ExplodesOnHit"
+			{
+				"offset"	"CTFGrenadePipebombProjectile::ExplodesOnHit"
+				"hooktype"	"entity"
+				"return"	"bool"
+				"this"		"entity"
+			}
+		}
+	}
+}
