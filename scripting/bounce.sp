@@ -7,6 +7,9 @@
 
 #pragma newdecls required
 
+#define PLUGIN_VERSION			"1.0.0"
+#define PLUGIN_VERSION_REVISION	"manual"
+
 enum SolidType_t
 {
     SOLID_NONE		= 0,    // no solid model
@@ -65,7 +68,7 @@ public Plugin myinfo =
 	name = "Bounce",
 	author = "42",
 	description = "Bouncy Projectiles",
-	version = "1.0.0",
+	version = PLUGIN_VERSION ... "." ... PLUGIN_VERSION_REVISION,
 	url = "https://github.com/FortyTwoFortyTwo/Bounce",
 };
 
@@ -134,7 +137,7 @@ public Action Event_PlayerInventoryUpdate(Event event, const char[] sName, bool 
 {
 	int iClient = GetClientOfUserId(event.GetInt("userid"));
 	if (TF2_GetClientTeam(iClient) <= TFTeam_Spectator)
-		return;
+		return Plugin_Continue;
 	
 	TFClassType nClass = TF2_GetPlayerClass(iClient);
 	
@@ -163,6 +166,8 @@ public Action Event_PlayerInventoryUpdate(Event event, const char[] sName, bool 
 				TF2_SwitchActiveWeapon(iClient, iWeapon);
 		}
 	}
+	
+	return Plugin_Continue;
 }
 
 bool BounceProjectile(int iProjectile, int iToucher, float vecVelocity[3])
@@ -263,7 +268,8 @@ public Action Timer_ExpiredLifetime(Handle hTimer, int iRef)
 {
 	int iProjectile = EntRefToEntIndex(iRef);
 	if (iProjectile == INVALID_ENT_REFERENCE)
-		return;
+		return Plugin_Continue;
 	
 	g_aExpiredLifetime.Push(iProjectile);
+	return Plugin_Continue;
 }
