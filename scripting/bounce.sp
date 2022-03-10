@@ -137,7 +137,7 @@ public Action Event_PlayerInventoryUpdate(Event event, const char[] sName, bool 
 {
 	int iClient = GetClientOfUserId(event.GetInt("userid"));
 	if (TF2_GetClientTeam(iClient) <= TFTeam_Spectator)
-		return;
+		return Plugin_Continue;
 	
 	TFClassType nClass = TF2_GetPlayerClass(iClient);
 	
@@ -166,6 +166,8 @@ public Action Event_PlayerInventoryUpdate(Event event, const char[] sName, bool 
 				TF2_SwitchActiveWeapon(iClient, iWeapon);
 		}
 	}
+	
+	return Plugin_Continue;
 }
 
 bool BounceProjectile(int iProjectile, int iToucher, float vecVelocity[3])
@@ -266,7 +268,8 @@ public Action Timer_ExpiredLifetime(Handle hTimer, int iRef)
 {
 	int iProjectile = EntRefToEntIndex(iRef);
 	if (iProjectile == INVALID_ENT_REFERENCE)
-		return;
+		return Plugin_Continue;
 	
 	g_aExpiredLifetime.Push(iProjectile);
+	return Plugin_Continue;
 }
