@@ -2,6 +2,10 @@
 
 TF2 with bouncy projectiles. Several weapons, mostly bullet weapons are restricted in favor of weapons that shoot bouncy projectiles
 
+## Builds
+All builds can be found [here](https://github.com/FortyTwoFortyTwo/Bounce/actions?query=workflow%3APackage+branch%3Amaster).
+To download latest build version, select latest package then "Artifacts" section underneath. You need to be logged in to download it.
+
 ## Requirements
 - SourceMod 1.10
 - [tf_econ_data](https://forums.alliedmods.net/showthread.php?t=315011)
