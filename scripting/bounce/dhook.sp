@@ -142,11 +142,14 @@ public MRESReturn DHook_PipebombTouchPre(int iProjectile, DHookParam hParams)
 	int iToucher = hParams.Get(1);
 	if (CanDamageEntity(iToucher))
 		g_bExplodesOnHit = true;
+	
+	return MRES_Ignored;
 }
 
 public MRESReturn DHook_PipebombTouchPost(int iProjectile, DHookParam hParams)
 {
 	g_bExplodesOnHit = false;
+	return MRES_Ignored;
 }
 
 public MRESReturn DHook_ExplodesOnHit(int iProjectile, DHookReturn hReturn)
