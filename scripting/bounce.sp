@@ -7,6 +7,9 @@
 
 #pragma newdecls required
 
+#define PLUGIN_VERSION			"1.0.0"
+#define PLUGIN_VERSION_REVISION	"manual"
+
 enum SolidType_t
 {
     SOLID_NONE		= 0,    // no solid model
@@ -65,7 +68,7 @@ public Plugin myinfo =
 	name = "Bounce",
 	author = "42",
 	description = "Bouncy Projectiles",
-	version = "1.0.0",
+	version = PLUGIN_VERSION ... "." ... PLUGIN_VERSION_REVISION,
 	url = "https://github.com/FortyTwoFortyTwo/Bounce",
 };
 
