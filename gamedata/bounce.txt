@@ -15,23 +15,23 @@
 		{
 			"CBaseEntity::VPhysicsCollision"
 			{
-				"linux"		"165"
-				"windows"	"164"
+				"linux"		"168"
+				"windows"	"167"
 			}
 			"CBaseEntity::ResolveFlyCollisionCustom"
 			{
-				"linux"		"172"
-				"windows"	"171"
+				"linux"		"175"
+				"windows"	"174"
 			}
 			"CTFGrenadePipebombProjectile::PipebombTouch"
 			{
-				"linux"		"257"
-				"windows"	"256"
+				"linux"		"261"
+				"windows"	"260"
 			}
 			"CTFGrenadePipebombProjectile::ExplodesOnHit"
 			{
-				"linux"		"261"
-				"windows"	"260"
+				"linux"		"265"
+				"windows"	"264"
 			}
 			"IPhysicsObject::SetVelocity"
 			{
